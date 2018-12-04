@@ -508,7 +508,7 @@
 ### 找到重复的单词
 [在线练习](https://regex101.com/r/ofzZpk/2)
 
-### 好大立牌
+### 日志提取
 [写法一](https://regex101.com/r/p9QRsE/1)
 
 [写法二](https://regex101.com/r/i7bKdo/1)
