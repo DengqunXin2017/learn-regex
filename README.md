@@ -501,7 +501,7 @@
 
 [在线练习](https://regex101.com/r/OwNriM/2/)
 
-### 为什么`/q[^u]/`无法匹配'Qantas'或者'Iraq'?
+### 为什么`/q[^u]/`无法匹配'Qantas'或者'Iraq'?
 一个字符组,即使是排除型字符组,也需要匹配一个字符
 
 [在线练习](https://regex101.com/r/SE9rMH/1)
