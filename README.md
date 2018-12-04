@@ -54,8 +54,7 @@
 	* [5.3 多行修饰符 (Multiline)](#53-多行修饰符-multiline)
 * [6.案例](#案例)
 * [额外补充](#额外补充)
-* [贡献](#贡献)
-* [许可证](#许可证)
+
 
 ## 1. 基本匹配
 
@@ -509,14 +508,14 @@
 ### 找到重复的单词
 [在线练习](https://regex101.com/r/ofzZpk/2)
 
+### 好大立牌
+[写法一](https://regex101.com/r/p9QRsE/1)
 
-## 贡献
+[写法二](https://regex101.com/r/i7bKdo/1)
 
-* 报告问题
-* 开放合并请求
-* 传播此文档
-* 直接和我联系 ziishaned@gmail.com 或 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/ziishaned.svg?style=social&label=Follow%20%40ziishaned)](https://twitter.com/ziishaned)
+[在线练习](https://regex101.com/r/4AJ9kf/1)
 
-## 许可证
 
-MIT &copy; [Zeeshan Ahmad](https://twitter.com/ziishaned)
+
+## 下一步
+推荐书籍:<<精通正则表达式>>
