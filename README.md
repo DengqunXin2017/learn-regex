@@ -28,7 +28,7 @@
  * [用途]
 	* [验证匹配]
 	* [切分](https://regex101.com/r/nuTvoy/1)
-	* [替换](https://regex101.com/r/83Kt5C/1)
+	* [替换](https://regex101.com/r/k6dfM5/1)
 	* [分组提取]
  * [1. 基本匹配](#1-基本匹配)
  * [2. 元字符](#2-元字符)
@@ -67,6 +67,7 @@
 * [回溯]
 
 --------------------
+
 * [正则优化]
 
 
@@ -518,25 +519,86 @@
 [在线练习](https://regex101.com/r/4AJ9kf/1)
 
 ### 添加逗号
+
 [在线练习](https://regex101.com/r/qunq1A/1)
 
-
 ## Python正则
+
 ### search() vs. match()
+
 [官方解释](https://docs.python.org/3.7/library/re.html#search-vs-match)
 
 总结一句话在你不知道自己在干什么的情况下,用`search`就对了
+
+### Match Object
+
+通过`match`或者`search`方法返回的结果都是一个Match 对象。下面就几个常用方法做一下说明
+
+* group() 相当于group(0) 返回整个匹配的结果,也就是整个正则匹配的结果
+
+* group(n) 返回匹配的第n个结果
+
+```python
+>>> m = re.match(r"(\w+) (\w+)", "Isaac Newton, physicist")
+>>> m.group(0)       # The entire match,就是group()
+'Isaac Newton'
+>>> m.group(1)       # The first parenthesized subgroup.
+'Isaac'
+>>> m.group(2)       # The second parenthesized subgroup.
+'Newton'
+>>> m.group(1, 2)    # Multiple arguments give us a tuple.
+('Isaac', 'Newton')
+```
+
+* groups() 返回一个元组，元组包含所有的group
+
+```python
+>>> m = re.match(r"(\d+)\.(\d+)", "24.1632")
+>>> m.groups()
+('24', '1632')
+```
+
+### 匹配多个内容
+
+`search` 和 `match` 只能匹配出字符串中第一个符合正则的子串。如果有多个子串符合正则，就需要使用`re.findall` 或者`re.finditer`.`findall`直接返回一个list,每个element是一个元组，元组包含匹配到的group。
+
+![findall](https://blog-image-1257302654.cos.ap-guangzhou.myqcloud.com/blog/2018-12-17-060319.png)
+
+```python
+result = re.finditer(r'singer=\"(.*?)\">([\u4e00-\u9fa5]+)', html, re.S)
+for match in result:
+    print(match.groups())
+```
+
+`finditer` 返回一个`match`对象的生成器。
+
+### `compile`
+
+`re.compile`用来编译一个正则表达式，生成一个正则表达式对象（Pattern）.方便重复使用，提高效率
+
+```python
+prog = re.compile(pattern)
+result = prog.match(string)
+```
+
+和下面这个功能上完全相等
+
+```python
+result = re.match(pattern, string)
+```
+
+
 ## 书籍工具推荐
 
 推荐书籍:<<精通正则表达式>>
 
 推荐工具:
 
-- https://regex101.com/
+* <https://regex101.com/>
 
-- https://regexr.com/
+* <https://regexr.com/>
 
-- https://tool.lu/regex/
+* <https://tool.lu/regex/>
 
 ## 额外补充
 
