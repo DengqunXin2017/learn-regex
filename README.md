@@ -546,9 +546,9 @@
 
 ### Match Object
 
-通过`match`或者`search`方法返回的结果都是一个Match 对象。下面就几个常用方法做一下说明
+通过`match`或者`search`方法返回的结果都是一个Match 对象。下面就几个常用方法做一下说明
 
-* group() 相当于group(0) 返回整个匹配的结果,也就是整个正则匹配的结果
+* group() 相当于group(0) 返回整个匹配的结果,也就是整个正则匹配的结果
 
 * group(n) 返回匹配的第n个结果
 
@@ -574,7 +574,7 @@
 
 ### 匹配多个内容
 
-`search` 和 `match` 只能匹配出字符串中第一个符合正则的子串。如果有多个子串符合正则，就需要使用`re.findall` 或者`re.finditer`.`findall`直接返回一个list,每个element是一个元组，元组包含匹配到的group。
+`search` 和 `match`只能匹配出字符串中第一个符合正则的子串。如果有多个子串符合正则，就需要使用`re.findall` 或者`re.finditer`.`findall`直接返回一个list,每个element是一个元组，元组包含匹配到的group。
 
 ![findall](https://blog-image-1257302654.cos.ap-guangzhou.myqcloud.com/blog/2018-12-17-060319.png)
 
@@ -584,11 +584,11 @@ for match in result:
     print(match.groups())
 ```
 
-`finditer` 返回一个`match`对象的生成器。
+`finditer` 返回一个`match`对象的生成器。
 
 ### `compile`
 
-`re.compile`用来编译一个正则表达式，生成一个正则表达式对象（Pattern）.方便重复使用，提高效率
+`re.compile`用来编译一个正则表达式，生成一个正则表达式对象（Pattern）.方便重复使用，提高效率
 
 ```python
 prog = re.compile(pattern)
@@ -634,3 +634,4 @@ result = re.match(pattern, string)
 * *日期 (MM/DD/YYYY)*: `^(0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2}$`
 * *日期 (YYYY/MM/DD)*: `^(19|20)?[0-9]{2}[- /.](0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])$`
 * *MasterCard 信用卡号*: `^(5[1-5][0-9]{14})*$`
+* [一组匹配中国大陆手机号码的正则表达式](https://github.com/VincentSit/ChinaMobilePhoneNumberRegex/blob/master/README-CN.md)
